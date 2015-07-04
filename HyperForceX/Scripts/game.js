@@ -52,7 +52,7 @@ function setupStats() {
 // Callback function that creates our Main Game Loop - refreshed 60 fps
 function gameLoop() {
     stats.begin(); // Begin measuring
-    //stars.update();
+    stars.update();
     stage.update();
     stats.end(); // end measuring
 }
@@ -62,8 +62,8 @@ function main() {
     galaxy = new createjs.Bitmap(assets.getResult("galaxy"));
     stage.addChild(galaxy);
     // Adds Star Object to the Stage
-    //stars = new objects.Star(assets.getResult("stars"));
-    //stage.addChild(stars);
+    stars = new objects.Star(assets.getResult("stars"));
+    stage.addChild(stars);
     //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
     //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
     // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
