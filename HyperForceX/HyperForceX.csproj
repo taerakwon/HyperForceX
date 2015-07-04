@@ -89,12 +89,13 @@
   <ItemGroup>
     <Folder Include="assets\audio\" />
     <Folder Include="assets\fonts\" />
-    <Folder Include="Scripts\managers\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\game.ts" />
+    <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\asteroid.ts" />
     <TypeScriptCompile Include="Scripts\objects\fuel.ts" />
+    <TypeScriptCompile Include="Scripts\objects\status.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\jet.ts" />
     <TypeScriptCompile Include="Scripts\objects\star.ts" />
@@ -104,6 +105,7 @@
     <TypeScriptCompile Include="Scripts\typings\soundjs\soundjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\stats\stats.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\tweenjs\tweenjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\utility\utility.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

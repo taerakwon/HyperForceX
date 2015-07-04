@@ -3,11 +3,14 @@
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
+/// <reference path="utility/utility.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/star.ts" />
 /// <reference path="objects/jet.ts" />
 /// <reference path="objects/asteroid.ts" />
 /// <reference path="objects/fuel.ts" />
+/// <reference path="objects/status.ts" />
+/// <reference path="managers/collision.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
@@ -26,10 +29,13 @@ var helloLabel; // create a reference
 var jet;
 var asteroids = [];
 var fuel;
+var jetStatus;
 // Background Variable
 var galaxy;
 var stars;
 var stars1;
+// Game Manager
+var collision;
 // Preloader Function
 function preload() {
     assets = new createjs.LoadQueue();
@@ -71,6 +77,8 @@ function gameLoop() {
         asteroids[asteroid].update();
     }
     fuel.update();
+    collision.check(fuel);
+    jetStatus.update();
     stage.update();
     stats.end(); // end measuring
 }
@@ -97,6 +105,10 @@ function main() {
     // Adds Fuel to the Stage
     fuel = new objects.Fuel(assets.getResult("fuel"));
     stage.addChild(fuel);
+    // Add Status
+    jetStatus = new objects.Status();
+    // Add Collision Manager
+    collision = new managers.Collision();
     //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
     //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
     // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;

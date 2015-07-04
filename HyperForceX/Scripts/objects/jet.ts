@@ -1,6 +1,6 @@
 ﻿module objects {
     // Background Class +++++++++++++++++++++++++++++++++++++++
-    export class Jetplane extends createjs.Bitmap {
+    export class Jetplane extends objects.GameObject {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(assetName: string) {

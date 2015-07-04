@@ -31,7 +31,7 @@
 
         private reset(): void {
             this.x = 720; // start island off stage 
-            this.y = Math.floor(Math.random() * 480); // Starts Asteroid at Random Vertical Edge
+            this.y = Math.floor(Math.random() * 450); // Starts Asteroid at Random Vertical Edge
             this.dy = Math.floor(Math.random() * 10) - 5; // Asteroids can either move up or down
             this.dx = Math.floor(Math.random() * -4) - 2; // Asteroid displacement speed towards left
         }
