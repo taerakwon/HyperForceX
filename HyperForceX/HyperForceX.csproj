@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="assets\images\asteroid.png" />
     <Content Include="assets\images\bullet.png" />
+    <Content Include="assets\images\fuel.png" />
     <Content Include="assets\images\galaxy.png" />
     <Content Include="assets\images\jetplane.gif" />
     <Content Include="assets\images\stars.png" />
@@ -93,6 +94,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\objects\asteroid.ts" />
+    <TypeScriptCompile Include="Scripts\objects\fuel.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\jet.ts" />
     <TypeScriptCompile Include="Scripts\objects\star.ts" />

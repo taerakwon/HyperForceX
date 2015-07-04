@@ -7,6 +7,7 @@
 /// <reference path="objects/star.ts" />
 /// <reference path="objects/jet.ts" />
 /// <reference path="objects/asteroid.ts" />
+/// <reference path="objects/fuel.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
@@ -17,15 +18,18 @@ var manifest = [
     { id: "stars", src: "assets/images/stars.png" },
     { id: "jet", src: "assets/images/jetplane.gif" },
     { id: "bullet", src: "assets/images/bullet.png" },
-    { id: "asteroid", src: "assets/images/asteroid.png" }
+    { id: "asteroid", src: "assets/images/asteroid.png" },
+    { id: "fuel", src: "assets/images/fuel.png" }
 ];
 // Game Variables
 var helloLabel; // create a reference
 var jet;
 var asteroids = [];
+var fuel;
 // Background Variable
 var galaxy;
 var stars;
+var stars1;
 // Preloader Function
 function preload() {
     assets = new createjs.LoadQueue();
@@ -61,10 +65,12 @@ function setupStats() {
 function gameLoop() {
     stats.begin(); // Begin measuring
     stars.update();
+    stars1.update();
     jet.update();
     for (var asteroid = 0; asteroid < 4; asteroid++) {
         asteroids[asteroid].update();
     }
+    fuel.update();
     stage.update();
     stats.end(); // end measuring
 }
@@ -76,6 +82,10 @@ function main() {
     // Adds Star Object to the Stage
     stars = new objects.Star(assets.getResult("stars"));
     stage.addChild(stars);
+    stars1 = new objects.Star(assets.getResult("stars"));
+    stars1.dx = -30;
+    stage.addChild(stars);
+    stage.addChild(stars1);
     // Adds Jetplane to the Stage
     jet = new objects.Jetplane(assets.getResult("jet"));
     stage.addChild(jet);
@@ -84,6 +94,9 @@ function main() {
         asteroids[asteroid] = new objects.Asteroid(assets.getResult("asteroid"));
         stage.addChild(asteroids[asteroid]);
     }
+    // Adds Fuel to the Stage
+    fuel = new objects.Fuel(assets.getResult("fuel"));
+    stage.addChild(fuel);
     //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
     //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
     // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
