@@ -59,7 +59,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\asteroid.png" />
+    <Content Include="assets\images\bullet.png" />
     <Content Include="assets\images\galaxy.png" />
+    <Content Include="assets\images\jetplane.gif" />
     <Content Include="assets\images\stars.png" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -85,9 +88,13 @@
   <ItemGroup>
     <Folder Include="assets\audio\" />
     <Folder Include="assets\fonts\" />
+    <Folder Include="Scripts\managers\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\game.ts" />
+    <TypeScriptCompile Include="Scripts\objects\asteroid.ts" />
+    <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
+    <TypeScriptCompile Include="Scripts\objects\jet.ts" />
     <TypeScriptCompile Include="Scripts\objects\star.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />

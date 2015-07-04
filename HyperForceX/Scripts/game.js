@@ -3,7 +3,10 @@
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
+/// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/star.ts" />
+/// <reference path="objects/jet.ts" />
+/// <reference path="objects/asteroid.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
@@ -11,10 +14,15 @@ var stats;
 var assets;
 var manifest = [
     { id: "galaxy", src: "assets/images/galaxy.png" },
-    { id: "stars", src: "assets/images/stars.png" }
+    { id: "stars", src: "assets/images/stars.png" },
+    { id: "jet", src: "assets/images/jetplane.gif" },
+    { id: "bullet", src: "assets/images/bullet.png" },
+    { id: "asteroid", src: "assets/images/asteroid.png" }
 ];
 // Game Variables
 var helloLabel; // create a reference
+var jet;
+var asteroids = [];
 // Background Variable
 var galaxy;
 var stars;
@@ -34,7 +42,7 @@ function init() {
     stage.enableMouseOver(20);
     createjs.Ticker.setFPS(60); // framerate 60 fps for the game
     // event listener triggers 60 times every second
-    createjs.Ticker.on("tick", gameLoop);
+    createjs.Ticker.addEventListener("tick", gameLoop);
     // calling main game function
     main();
 }
@@ -45,7 +53,7 @@ function setupStats() {
     // align bottom-right
     stats.domElement.style.position = 'absolute';
     stats.domElement.style.textAlign = 'center';
-    //stats.domElement.style.left = '10px';
+    //stats.domElement.style.letElementById('spinner').innerHTML = documentft = '10px';
     stats.domElement.style.top = '500px';
     document.body.appendChild(stats.domElement);
 }
@@ -53,6 +61,10 @@ function setupStats() {
 function gameLoop() {
     stats.begin(); // Begin measuring
     stars.update();
+    jet.update();
+    for (var asteroid = 0; asteroid < 4; asteroid++) {
+        asteroids[asteroid].update();
+    }
     stage.update();
     stats.end(); // end measuring
 }
@@ -64,6 +76,14 @@ function main() {
     // Adds Star Object to the Stage
     stars = new objects.Star(assets.getResult("stars"));
     stage.addChild(stars);
+    // Adds Jetplane to the Stage
+    jet = new objects.Jetplane(assets.getResult("jet"));
+    stage.addChild(jet);
+    // Adds Asteroid to the Stage
+    for (var asteroid = 0; asteroid < 4; asteroid++) {
+        asteroids[asteroid] = new objects.Asteroid(assets.getResult("asteroid"));
+        stage.addChild(asteroids[asteroid]);
+    }
     //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
     //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
     // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
