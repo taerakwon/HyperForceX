@@ -7,3 +7,8 @@ canvas {
     margin-right: auto;
     display: block;
 }
+
+@font-face {
+    font-family: digital-7;
+    src:url(../assets/fonts/digital-7.ttf)format('truetype');
+}

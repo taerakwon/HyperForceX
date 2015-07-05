@@ -11,7 +11,7 @@
         // PUBLIC METHOD ++++++++++++++++++++++++++++++++++++++
         public update(): void {
             // Changes vertical location based on mouse location
-            this.y = stage.mouseY;
+            this.y = stage.mouseY;            
         }
     }
 }  

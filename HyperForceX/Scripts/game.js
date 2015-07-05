@@ -3,6 +3,7 @@
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
+/// <reference path="../config/constants.ts" />
 /// <reference path="utility/utility.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/star.ts" />
@@ -30,6 +31,7 @@ var jet;
 var asteroids = [];
 var fuel;
 var jetStatus;
+var count = 0; // Counter used to measure fuel consumption
 // Background Variable
 var galaxy;
 var stars;
@@ -67,6 +69,20 @@ function setupStats() {
     stats.domElement.style.top = '500px';
     document.body.appendChild(stats.domElement);
 }
+function fuelConsumption() {
+    count += 1;
+    if (count == 20) {
+        jetStatus.fuelAmount -= 1;
+        count = 0;
+    }
+    if (jetStatus.fuelAmount <= 0) {
+    }
+}
+function distance() {
+    jetStatus.distance--;
+    if (jetStatus.distance == 0) {
+    }
+}
 // Callback function that creates our Main Game Loop - refreshed 60 fps
 function gameLoop() {
     stats.begin(); // Begin measuring
@@ -75,10 +91,13 @@ function gameLoop() {
     jet.update();
     for (var asteroid = 0; asteroid < 4; asteroid++) {
         asteroids[asteroid].update();
+        collision.check(asteroids[asteroid]);
     }
     fuel.update();
     collision.check(fuel);
     jetStatus.update();
+    distance();
+    fuelConsumption();
     stage.update();
     stats.end(); // end measuring
 }

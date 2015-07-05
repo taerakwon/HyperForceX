@@ -66,6 +66,7 @@
     <Content Include="assets\images\jetplane.gif" />
     <Content Include="assets\images\stars.png" />
     <Content Include="packages.config" />
+    <Content Include="assets\fonts\digital-7.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,9 +89,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\audio\" />
-    <Folder Include="assets\fonts\" />
+    <Folder Include="Scripts\states\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="config\constants.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\asteroid.ts" />
