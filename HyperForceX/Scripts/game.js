@@ -20,11 +20,23 @@ var assets;
 var manifest = [
     { id: "galaxy", src: "assets/images/galaxy.png" },
     { id: "stars", src: "assets/images/stars.png" },
-    { id: "jet", src: "assets/images/jetplane.gif" },
-    { id: "bullet", src: "assets/images/bullet.png" },
-    { id: "asteroid", src: "assets/images/asteroid.png" },
-    { id: "fuel", src: "assets/images/fuel.png" }
+    { id: "bullet", src: "assets/images/bullet.png" }
 ];
+var data = {
+    "images": [
+        "assets/images/atlas.png"
+    ],
+    "frames": [
+        [2, 2, 50, 50, 0, 0, 0],
+        [54, 2, 50, 30, 0, 0, 0],
+        [106, 2, 80, 29, 0, 0, -1]
+    ],
+    "animations": {
+        "asteroid": [0],
+        "fuel": [1],
+        "jetplane": [2]
+    }
+};
 // Game Variables
 var helloLabel; // create a reference
 var jet;
@@ -37,6 +49,7 @@ var galaxy;
 var stars;
 var stars1;
 // Game Manager
+var atlas;
 var collision;
 // Preloader Function
 function preload() {
@@ -45,6 +58,8 @@ function preload() {
     // event listener triggers when assets are completely loaded
     assets.on("complete", init, this);
     assets.loadManifest(manifest);
+    // Create Texture Atlas - Defining New Spritesheet
+    atlas = new createjs.SpriteSheet(data);
     //Setup statistics object
     setupStats();
 }
@@ -114,15 +129,15 @@ function main() {
     stage.addChild(stars);
     stage.addChild(stars1);
     // Adds Jetplane to the Stage
-    jet = new objects.Jetplane(assets.getResult("jet"));
+    jet = new objects.Jetplane("jetplane");
     stage.addChild(jet);
     // Adds Asteroid to the Stage
     for (var asteroid = 0; asteroid < 4; asteroid++) {
-        asteroids[asteroid] = new objects.Asteroid(assets.getResult("asteroid"));
+        asteroids[asteroid] = new objects.Asteroid("asteroid");
         stage.addChild(asteroids[asteroid]);
     }
     // Adds Fuel to the Stage
-    fuel = new objects.Fuel(assets.getResult("fuel"));
+    fuel = new objects.Fuel("fuel");
     stage.addChild(fuel);
     // Add Status
     jetStatus = new objects.Status();

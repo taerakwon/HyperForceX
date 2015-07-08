@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\asteroid.png" />
+    <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\bullet.png" />
     <Content Include="assets\images\fuel.png" />
     <Content Include="assets\images\galaxy.png" />
@@ -67,6 +68,7 @@
     <Content Include="assets\images\stars.png" />
     <Content Include="packages.config" />
     <Content Include="assets\fonts\digital-7.ttf" />
+    <Content Include="assets\images\atlas.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
