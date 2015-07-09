@@ -13,11 +13,16 @@
 /// <reference path="objects/fuel.ts" />
 /// <reference path="objects/status.ts" />
 /// <reference path="managers/collision.ts" />
+/// <reference path="states/play.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
 var stats;
-var atlas;
+var game;
+// Background Variable
+var galaxy;
+var stars;
+var stars1;
 // Game Variables
 var helloLabel; // create a reference
 var jet;
@@ -25,13 +30,11 @@ var asteroids = [];
 var fuel;
 var jetStatus;
 var count = 0; // Counter used to measure fuel consumption
-// Background Variable
-var galaxy;
-var stars;
-var stars1;
 // Game Manager
 var assets;
 var collision;
+// Game States
+var play;
 // Preloader Function
 function preload() {
     // Instatiate Asset Manager Class   
@@ -60,65 +63,21 @@ function setupStats() {
     stats.domElement.style.top = '500px';
     document.body.appendChild(stats.domElement);
 }
-function fuelConsumption() {
-    count += 1;
-    if (count == 20) {
-        jetStatus.fuelAmount -= 1;
-        count = 0;
-    }
-    if (jetStatus.fuelAmount <= 0) {
-    }
-}
-function distance() {
-    jetStatus.distance--;
-    if (jetStatus.distance == 0) {
-    }
-}
 // Callback function that creates our Main Game Loop - refreshed 60 fps
 function gameLoop() {
     stats.begin(); // Begin measuring
-    stars.update();
-    stars1.update();
-    jet.update();
-    for (var asteroid = 0; asteroid < 4; asteroid++) {
-        asteroids[asteroid].update();
-        collision.check(asteroids[asteroid]);
-    }
-    fuel.update();
-    collision.check(fuel);
-    jetStatus.update();
-    distance();
-    fuelConsumption();
+    play.update();
     stage.update();
     stats.end(); // end measuring
 }
 // MAIN GAME FUNCTION
 function main() {
-    // Adds Galaxy Bitmap to the Stage
-    galaxy = new createjs.Bitmap(assets.loader.getResult("galaxy"));
-    stage.addChild(galaxy);
-    // Adds Star Object to the Stage
-    stars = new objects.Star(assets.loader.getResult("stars"));
-    stage.addChild(stars);
-    stars1 = new objects.Star(assets.loader.getResult("stars"));
-    stars1.dx = -30;
-    stage.addChild(stars);
-    stage.addChild(stars1);
-    // Adds Jetplane to the Stage
-    jet = new objects.Jetplane("jetplane");
-    stage.addChild(jet);
-    // Adds Asteroid to the Stage
-    for (var asteroid = 0; asteroid < 4; asteroid++) {
-        asteroids[asteroid] = new objects.Asteroid("asteroid");
-        stage.addChild(asteroids[asteroid]);
-    }
-    // Adds Fuel to the Stage
-    fuel = new objects.Fuel("fuel");
-    stage.addChild(fuel);
-    // Add Status
-    jetStatus = new objects.Status();
-    // Add Collision Manager
-    collision = new managers.Collision();
+    // Add Main Game Container
+    game = new createjs.Container();
+    // Instantiate Play State
+    play = new states.Play();
+    // Add Game Container to Stage
+    stage.addChild(game);
     //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
     //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
     // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;

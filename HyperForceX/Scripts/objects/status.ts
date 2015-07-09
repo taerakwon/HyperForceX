@@ -15,8 +15,8 @@
             this.fuelLabel.y = 25;
             this.distanceLabel.x = 350;
             this.distanceLabel.y = 25;
-            stage.addChild(this.distanceLabel);
-            stage.addChild(this.fuelLabel);
+            game.addChild(this.distanceLabel);
+            game.addChild(this.fuelLabel);
             
         }
 

@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\audio\" />
-    <Folder Include="Scripts\states\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="config\constants.ts" />
@@ -104,6 +103,7 @@
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\jet.ts" />
     <TypeScriptCompile Include="Scripts\objects\star.ts" />
+    <TypeScriptCompile Include="Scripts\states\play.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\preloadjs\preloadjs.d.ts" />
