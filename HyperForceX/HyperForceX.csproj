@@ -96,6 +96,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="config\constants.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />
+    <TypeScriptCompile Include="Scripts\managers\asset.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\asteroid.ts" />
     <TypeScriptCompile Include="Scripts\objects\fuel.ts" />

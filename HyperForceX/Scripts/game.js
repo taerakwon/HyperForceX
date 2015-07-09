@@ -5,6 +5,7 @@
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 /// <reference path="../config/constants.ts" />
 /// <reference path="utility/utility.ts" />
+/// <reference path="managers/asset.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/star.ts" />
 /// <reference path="objects/jet.ts" />
@@ -16,27 +17,7 @@
 var canvas = document.getElementById("canvas");
 var stage;
 var stats;
-var assets;
-var manifest = [
-    { id: "galaxy", src: "assets/images/galaxy.png" },
-    { id: "stars", src: "assets/images/stars.png" },
-    { id: "bullet", src: "assets/images/bullet.png" }
-];
-var data = {
-    "images": [
-        "assets/images/atlas.png"
-    ],
-    "frames": [
-        [2, 2, 50, 50, 0, 0, 0],
-        [54, 2, 50, 30, 0, 0, 0],
-        [106, 2, 80, 29, 0, 0, -1]
-    ],
-    "animations": {
-        "asteroid": [0],
-        "fuel": [1],
-        "jetplane": [2]
-    }
-};
+var atlas;
 // Game Variables
 var helloLabel; // create a reference
 var jet;
@@ -49,17 +30,12 @@ var galaxy;
 var stars;
 var stars1;
 // Game Manager
-var atlas;
+var assets;
 var collision;
 // Preloader Function
 function preload() {
-    assets = new createjs.LoadQueue();
-    assets.installPlugin(createjs.Sound);
-    // event listener triggers when assets are completely loaded
-    assets.on("complete", init, this);
-    assets.loadManifest(manifest);
-    // Create Texture Atlas - Defining New Spritesheet
-    atlas = new createjs.SpriteSheet(data);
+    // Instatiate Asset Manager Class   
+    assets = new managers.Asset();
     //Setup statistics object
     setupStats();
 }
@@ -119,12 +95,12 @@ function gameLoop() {
 // MAIN GAME FUNCTION
 function main() {
     // Adds Galaxy Bitmap to the Stage
-    galaxy = new createjs.Bitmap(assets.getResult("galaxy"));
+    galaxy = new createjs.Bitmap(assets.loader.getResult("galaxy"));
     stage.addChild(galaxy);
     // Adds Star Object to the Stage
-    stars = new objects.Star(assets.getResult("stars"));
+    stars = new objects.Star(assets.loader.getResult("stars"));
     stage.addChild(stars);
-    stars1 = new objects.Star(assets.getResult("stars"));
+    stars1 = new objects.Star(assets.loader.getResult("stars"));
     stars1.dx = -30;
     stage.addChild(stars);
     stage.addChild(stars1);
