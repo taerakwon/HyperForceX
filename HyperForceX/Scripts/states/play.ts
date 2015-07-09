@@ -26,6 +26,7 @@
 
         // PRIVATE METHODS
 
+        // Function to calculate fuel consumption
         private fuelConsumption() {
             count += 1;
             if (count == 20) {
@@ -33,9 +34,14 @@
                 count = 0;
             }
             if (jetStatus.fuelAmount <= 0) {
+                game.removeAllChildren();
+                stateName = "end";        
+                end = new states.End();        
+                stage.addChild(game);
             }
         }
 
+        // Function to calculate distance travelled
         private distance() {
             jetStatus.distance--;
             if (jetStatus.distance == 0) {
@@ -80,6 +86,7 @@
 
             // Add Game Container to Stage
             stage.addChild(game);
+
         }
     }
 }

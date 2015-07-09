@@ -7,34 +7,44 @@
 /// <reference path="utility/utility.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/gameobject.ts" />
+/// <reference path="objects/button.ts" />
 /// <reference path="objects/star.ts" />
 /// <reference path="objects/jet.ts" />
 /// <reference path="objects/asteroid.ts" />
 /// <reference path="objects/fuel.ts" />
 /// <reference path="objects/status.ts" />
 /// <reference path="managers/collision.ts" />
+/// <reference path="states/menu.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/end.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
 var stats;
 var game;
 // Background Variable
+var titleScreen;
 var galaxy;
 var stars;
 var stars1;
 // Game Variables
+var instructionButton;
+var playButton;
 var helloLabel; // create a reference
 var jet;
 var asteroids = [];
 var fuel;
 var jetStatus;
 var count = 0; // Counter used to measure fuel consumption
+var buttonName = "";
 // Game Manager
 var assets;
 var collision;
 // Game States
+var stateName = "menu";
+var menu;
 var play;
+var end;
 // Preloader Function
 function preload() {
     // Instatiate Asset Manager Class   
@@ -66,7 +76,15 @@ function setupStats() {
 // Callback function that creates our Main Game Loop - refreshed 60 fps
 function gameLoop() {
     stats.begin(); // Begin measuring
-    play.update();
+    if (stateName == "menu") {
+        menu.update();
+    }
+    else if (stateName == "play") {
+        play.update();
+    }
+    else if (stateName == "end") {
+        end.update();
+    }
     stage.update();
     stats.end(); // end measuring
 }
@@ -74,10 +92,15 @@ function gameLoop() {
 function main() {
     // Add Main Game Container
     game = new createjs.Container();
-    // Instantiate Play State
-    play = new states.Play();
-    // Add Game Container to Stage
+    // Instatiate Menu State
+    menu = new states.Menu();
     stage.addChild(game);
+    // Instatiate End State
+    //end = new states.End();
+    // Instantiate Play State
+    //play = new states.Play();
+    // Add Game Container to Stage
+    //stage.addChild(game);
     //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
     //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
     // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;

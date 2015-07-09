@@ -19,12 +19,12 @@
             }
             // Bounces the Fuel if Fuel Hits The Border of the Canvas
             if (this.y < 0) {
-                this.dy = Math.floor(Math.random() * 10);
-                this.dx = Math.floor(Math.random() * -4) - 2;
+                this.dy = 5;
+                this.dx = -5;
             }
             if (this.y > 480) {
-                this.dy = Math.floor(Math.random() * -10);
-                this.dx = Math.floor(Math.random() * -4) - 2;
+                this.dy = -5;
+                this.dx = -5;
             }
         }
 
@@ -32,15 +32,15 @@
         private reset(): void {
             this.x = 720; // start island off stage 
             this.y = Math.floor(Math.random() * 450); // Starts Asteroid at Random Vertical Edge
-            this.dy = Math.floor(Math.random() * 10) - 5; // Asteroids can either move up or down
-            this.dx = Math.floor(Math.random() * -4) - 2; // Asteroid displacement speed towards left
+            this.dy = 5; // Fuel can either move up or down
+            this.dx = -5; // Fuel displacement speed towards left
         }
 
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
-            this.x += this.dx; // Moves Asteroid Horizontally
-            this.y += this.dy; // Moves Asteroid Vertically
+            this.x += this.dx; // Moves Fuel Horizontally
+            this.y += this.dy; // Moves Fuel Vertically
             this.checkBounds();
         }
     }

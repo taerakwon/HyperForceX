@@ -59,13 +59,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\asteroid.png" />
     <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\bullet.png" />
-    <Content Include="assets\images\fuel.png" />
     <Content Include="assets\images\galaxy.png" />
-    <Content Include="assets\images\jetplane.gif" />
     <Content Include="assets\images\stars.png" />
+    <Content Include="assets\images\title.png" />
     <Content Include="packages.config" />
     <Content Include="assets\fonts\digital-7.ttf" />
     <Content Include="assets\images\atlas.json" />
@@ -98,11 +96,15 @@
     <TypeScriptCompile Include="Scripts\managers\asset.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\asteroid.ts" />
+    <TypeScriptCompile Include="Scripts\objects\button.ts" />
     <TypeScriptCompile Include="Scripts\objects\fuel.ts" />
+    <TypeScriptCompile Include="Scripts\objects\labels.ts" />
     <TypeScriptCompile Include="Scripts\objects\status.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\jet.ts" />
     <TypeScriptCompile Include="Scripts\objects\star.ts" />
+    <TypeScriptCompile Include="Scripts\states\end.ts" />
+    <TypeScriptCompile Include="Scripts\states\menu.ts" />
     <TypeScriptCompile Include="Scripts\states\play.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />

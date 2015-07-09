@@ -7,7 +7,9 @@
 <!-- Description: Hyper Force X is side scroller shooting game where the player's objective is to fly a
     jet plane to destroy enemies -->
 <!-- Revision History
-    July 8, 2015    - Asset Manager Class Created and Added
+    July 9, 2015    - Edited Assets, Created Menu Class
+    July 8, 2015    - Added Play State to Prepare for State Machine
+                    - Asset Manager Class Created and Added
                     - New SpriteSheet Created
     July 5, 2015    - Altered Collision response, Font style, Label positions
     July 4, 2015    - Collision Utiliity, Game Objects were altered, and Status labels were added
@@ -40,6 +42,7 @@
 
     <!-- Game Objects -->
     <script src="Scripts/managers/asset.js"></script>
+    <script src="Scripts/objects/button.js"></script>
     <script src="Scripts/objects/gameobject.js"></script>
     <script src="Scripts/objects/star.js"></script>
     <script src="Scripts/objects/jet.js"></script>
@@ -49,9 +52,11 @@
 
     <script src="Scripts/managers/collision.js"></script>
     <script src="Scripts/states/play.js"></script>
+    <script src="Scripts/states/end.js"></script>
 
     <!-- Game Scripts -->
     <script src="config/constants.js"></script>
+    <script src="Scripts/states/menu.js"></script>
     <script src="Scripts/game.js"></script>
 </body>
 </html>

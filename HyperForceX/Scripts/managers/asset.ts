@@ -9,27 +9,37 @@
         private manifest = [
         { id: "galaxy", src: "assets/images/galaxy.png" },
         { id: "stars", src: "assets/images/stars.png" },
-        { id: "bullet", src: "assets/images/bullet.png" }
+        { id: "bullet", src: "assets/images/bullet.png" },
+        { id: "title", src: "assets/images/title.png" }
         ];
 
         private data = {
-
             "images": [
                 "assets/images/atlas.png"
             ],
 
             "frames": [
-                [2, 2, 50, 50, 0, 0, 0],
-                [54, 2, 50, 30, 0, 0, 0],
-                [106, 2, 80, 29, 0, 0, -1]
+                [2, 2, 80, 29, 0, 0, -1],
+                [84, 2, 120, 30, 0, 0, 0],
+                [2, 33, 50, 30, 0, 0, 0],
+                [54, 34, 140, 30, 0, 0, 0],
+                [196, 34, 50, 50, 0, 0, 0],
+                [2, 66, 120, 30, 0, 0, 0],
+                [124, 66, 70, 30, 0, 0, 0]
             ],
 
             "animations": {
-                "asteroid": [0],
-                "fuel": [1],
-                "jetplane": [2]
+                "jetplane": [0],
+                "again": [1],
+                "fuel": [2],
+                "instruction": [3],
+                "asteroid": [4],
+                "main": [5],
+                "play": [6]
             }
+
         }
+
 
         // CONSTRUCTOR
         constructor() {
