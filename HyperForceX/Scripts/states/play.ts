@@ -12,7 +12,7 @@
             stars.update();
             stars1.update();
             jet.update();
-            for (var asteroid = 0; asteroid < 4; asteroid++) {
+            for (var asteroid = 0; asteroid < 10; asteroid++) {
                 asteroids[asteroid].update();
                 collision.check(asteroids[asteroid]);
             }
@@ -43,9 +43,7 @@
 
         // Function to calculate distance travelled
         private distance() {
-            jetStatus.distance--;
-            if (jetStatus.distance == 0) {
-            }
+            jetStatus.distance++;
         }
 
         // Main Function
@@ -68,8 +66,9 @@
             jet = new objects.Jetplane("jetplane");
             game.addChild(jet);
 
+            
             // Adds Asteroid to the Stage
-            for (var asteroid = 0; asteroid < 4; asteroid++) {
+            for (var asteroid = 0; asteroid < 10; asteroid++) {
                 asteroids[asteroid] = new objects.Asteroid("asteroid");
                 game.addChild(asteroids[asteroid]);
             }

@@ -24,6 +24,7 @@
             instructionButton = new objects.Button("instruction");
             instructionButton.x = 287;
             instructionButton.y = 360;
+            instructionButton.addEventListener("click", this.instructionClickedEvent);
             game.addChild(instructionButton);       
 
             // Add Play Button
@@ -38,6 +39,13 @@
             game.removeAllChildren();
             stateName = "play";
             play = new states.Play();   
+        }
+
+        private instructionClickedEvent(event: MouseEvent) {
+            game.removeAllChildren();
+            stateName = "instruction";
+            instruction = new states.Instruction();
+            stage.addChild(game);
         }
     }
 } 

@@ -1,7 +1,7 @@
 ﻿module objects {
     export class Status {
         // PUBLIC PROPERTIES
-        public distance: number = 5000;
+        public distance: number = 0;
         public fuelAmount: number = 100;
 
         private distanceLabel: createjs.Text;

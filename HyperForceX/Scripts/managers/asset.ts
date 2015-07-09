@@ -10,7 +10,8 @@
         { id: "galaxy", src: "assets/images/galaxy.png" },
         { id: "stars", src: "assets/images/stars.png" },
         { id: "bullet", src: "assets/images/bullet.png" },
-        { id: "title", src: "assets/images/title.png" }
+        { id: "title", src: "assets/images/title.png" },
+        { id: "black", src: "assets/images/black.png" }
         ];
 
         private data = {

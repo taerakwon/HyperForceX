@@ -30,7 +30,7 @@
 
 
         private reset(): void {
-            this.x = 720; // start island off stage 
+            this.x = 720; // Starts Astroids Off Stage
             this.y = Math.floor(Math.random() * 450); // Starts Asteroid at Random Vertical Edge
             this.dy = 5; // Fuel can either move up or down
             this.dx = -5; // Fuel displacement speed towards left

@@ -1,3 +1,5 @@
+/// <reference path="states/instruction.ts" />
+/// <reference path="states/instruction.ts" />
 /// <reference path="typings/stats/stats.d.ts" />
 /// <reference path="typings/easeljs/easeljs.d.ts" />
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
@@ -15,6 +17,7 @@
 /// <reference path="objects/status.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/menu.ts" />
+/// <reference path="states/instruction.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/end.ts" />
 // Game Framework Variables
@@ -27,10 +30,13 @@ var titleScreen;
 var galaxy;
 var stars;
 var stars1;
+var blank;
 // Game Variables
 var instructionButton;
 var playButton;
+var mainButton;
 var helloLabel; // create a reference
+var instructionLabel;
 var jet;
 var asteroids = [];
 var fuel;
@@ -43,6 +49,7 @@ var collision;
 // Game States
 var stateName = "menu";
 var menu;
+var instruction;
 var play;
 var end;
 // Preloader Function
@@ -84,6 +91,9 @@ function gameLoop() {
     }
     else if (stateName == "end") {
         end.update();
+    }
+    else if (stateName == "instruction") {
+        instruction.update();
     }
     stage.update();
     stats.end(); // end measuring
