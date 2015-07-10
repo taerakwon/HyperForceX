@@ -13,11 +13,18 @@ var objects;
         function Jetplane(assetName) {
             _super.call(this, assetName);
             this.x = 20;
+            this.engineSound = createjs.Sound.play("engine", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            stage.cursor = "none";
         }
         // PUBLIC METHOD ++++++++++++++++++++++++++++++++++++++
         Jetplane.prototype.update = function () {
-            // Changes vertical location based on mouse location
+            // Changes vertical and horizontal location based on mouse location
+            this.x = stage.mouseX;
             this.y = stage.mouseY;
+        };
+        Jetplane.prototype.destroy = function () {
+            this.engineSound.stop();
+            stage.cursor = "auto";
         };
         return Jetplane;
     })(objects.GameObject);

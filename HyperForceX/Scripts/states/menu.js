@@ -10,6 +10,7 @@ var states;
             playButton.update();
         };
         Menu.prototype.main = function () {
+            this.bgm = createjs.Sound.play("bgm", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
             stateName = "menu";
             // Add Game Container
             game = new createjs.Container();
@@ -39,6 +40,9 @@ var states;
             stateName = "instruction";
             instruction = new states.Instruction();
             stage.addChild(game);
+        };
+        Menu.prototype.stopBGM = function () {
+            this.bgm.stop();
         };
         return Menu;
     })();

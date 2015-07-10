@@ -59,6 +59,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\audio\bgm.wav" />
+    <Content Include="assets\audio\engine.wav" />
+    <Content Include="assets\audio\fuelPack.wav" />
+    <Content Include="assets\audio\imhit.wav" />
     <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\bullet.png" />
     <Content Include="assets\images\galaxy.png" />
@@ -88,9 +92,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\audio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="config\constants.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />

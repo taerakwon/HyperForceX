@@ -3,6 +3,7 @@ var states;
     var Play = (function () {
         // Constructor
         function Play() {
+            menu.bgm.stop();
             this.main();
         }
         // PUBLIC METHODS
@@ -11,7 +12,7 @@ var states;
             stars.update();
             stars1.update();
             jet.update();
-            for (var asteroid = 0; asteroid < 10; asteroid++) {
+            for (var asteroid = 0; asteroid < 12; asteroid++) {
                 asteroids[asteroid].update();
                 collision.check(asteroids[asteroid]);
             }
@@ -30,6 +31,7 @@ var states;
                 count = 0;
             }
             if (jetStatus.fuelAmount <= 0) {
+                jet.destroy();
                 game.removeAllChildren();
                 stateName = "end";
                 end = new states.End();
@@ -57,7 +59,7 @@ var states;
             jet = new objects.Jetplane("jetplane");
             game.addChild(jet);
             // Adds Asteroid to the Stage
-            for (var asteroid = 0; asteroid < 10; asteroid++) {
+            for (var asteroid = 0; asteroid < 12; asteroid++) {
                 asteroids[asteroid] = new objects.Asteroid("asteroid");
                 game.addChild(asteroids[asteroid]);
             }

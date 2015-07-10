@@ -34,6 +34,7 @@ var blank;
 // Game Variables
 var instructionButton;
 var playButton;
+var againButton;
 var mainButton;
 var helloLabel; // create a reference
 var instructionLabel;

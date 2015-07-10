@@ -6,11 +6,15 @@ var managers;
         function Asset() {
             // PRIVATE PROPERTIES
             this.manifest = [
+                { id: "bgm", src: "assets/audio/bgm.wav" },
                 { id: "galaxy", src: "assets/images/galaxy.png" },
                 { id: "stars", src: "assets/images/stars.png" },
                 { id: "bullet", src: "assets/images/bullet.png" },
                 { id: "title", src: "assets/images/title.png" },
-                { id: "black", src: "assets/images/black.png" }
+                { id: "black", src: "assets/images/black.png" },
+                { id: "engine", src: "assets/audio/engine.wav" },
+                { id: "imhit", src: "assets/audio/imhit.wav" },
+                { id: "fuelPack", src: "assets/audio/fuelPack.wav" }
             ];
             this.data = {
                 "images": [
@@ -39,6 +43,7 @@ var managers;
         }
         // PRELOAD FUNCTION
         Asset.prototype.preload = function () {
+            createjs.Sound.initializeDefaultPlugins();
             this.loader = new createjs.LoadQueue();
             this.loader.installPlugin(createjs.Sound);
             // event listener triggers when assets are completely loaded

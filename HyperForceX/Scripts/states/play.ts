@@ -3,6 +3,7 @@
 
         // Constructor
         constructor() {
+            menu.bgm.stop();
             this.main();
         }
 
@@ -12,7 +13,7 @@
             stars.update();
             stars1.update();
             jet.update();
-            for (var asteroid = 0; asteroid < 10; asteroid++) {
+            for (var asteroid = 0; asteroid < 12; asteroid++) {
                 asteroids[asteroid].update();
                 collision.check(asteroids[asteroid]);
             }
@@ -34,6 +35,7 @@
                 count = 0;
             }
             if (jetStatus.fuelAmount <= 0) {
+                jet.destroy();
                 game.removeAllChildren();
                 stateName = "end";        
                 end = new states.End();        
@@ -47,7 +49,7 @@
         }
 
         // Main Function
-        public main() {
+        public main() {            
             // Add Main Game Container
             game = new createjs.Container();
 
@@ -68,7 +70,7 @@
 
             
             // Adds Asteroid to the Stage
-            for (var asteroid = 0; asteroid < 10; asteroid++) {
+            for (var asteroid = 0; asteroid < 12; asteroid++) {
                 asteroids[asteroid] = new objects.Asteroid("asteroid");
                 game.addChild(asteroids[asteroid]);
             }

@@ -47,6 +47,7 @@ var blank: createjs.Bitmap;
 // Game Variables
 var instructionButton: objects.Button;
 var playButton: objects.Button;
+var againButton: objects.Button;
 var mainButton: objects.Button;
 
 var helloLabel: createjs.Text; // create a reference
@@ -58,11 +59,11 @@ var jetStatus: objects.Status;
 var count = 0; // Counter used to measure fuel consumption
 var buttonName = "";
 
-
 // Game Manager
 
 var assets: managers.Asset;
 var collision: managers.Collision;
+
 
 // Game States
 var stateName = "menu";
@@ -78,15 +79,15 @@ var end: states.End;
 function preload() {    
     // Instatiate Asset Manager Class   
     assets = new managers.Asset();
-
+    
     //Setup statistics object
-    setupStats();
+    setupStats();    
 }
 
 // Callback function that initializes game objects
 function init() {
     stage = new createjs.Stage(canvas); // reference to the stage
-    stage.enableMouseOver(20);
+    stage.enableMouseOver(20);    
     createjs.Ticker.setFPS(60); // framerate 60 fps for the game
     // event listener triggers 60 times every second
     createjs.Ticker.addEventListener("tick", gameLoop); 
@@ -138,8 +139,7 @@ function main()
     // Instatiate Menu State
     menu = new states.Menu();
 
-    stage.addChild(game);
-
+    stage.addChild(game);    
     // Instatiate End State
     //end = new states.End();
 

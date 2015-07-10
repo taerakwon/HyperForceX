@@ -1,9 +1,7 @@
 ﻿module objects {
-    export class Asteroid extends objects.GameObject {
-        
+    export class Asteroid extends objects.GameObject {        
         constructor(assetName: string) {
-            super(assetName);
-
+            super(assetName);            
             this.name = "asteroid";
             this.reset();
         }
@@ -29,7 +27,6 @@
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
-
             this.x += this.dx; // Moves Asteroid Horizontally
             this.y += this.dy; // Moves Asteroid Vertically
             this.checkBounds();

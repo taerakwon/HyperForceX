@@ -17,13 +17,16 @@ var managers;
                 if (gameObject.isColliding == false) {
                     createjs.Sound.play(gameObject.sound);
                     if (gameObject.name == "fuel") {
+                        createjs.Sound.play("fuelPack");
                         jetStatus.fuelAmount += 25;
                         if (jetStatus.fuelAmount > 100) {
                             jetStatus.fuelAmount = 100;
                         }
                         gameObject.y = -150;
+                        gameObject.x = 0;
                     }
                     if (gameObject.name == "asteroid") {
+                        createjs.Sound.play("imhit");
                         jetStatus.fuelAmount -= 25;
                         gameObject.y = -150;
                     }

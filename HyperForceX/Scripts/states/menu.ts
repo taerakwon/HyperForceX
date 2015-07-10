@@ -1,7 +1,9 @@
 ﻿module states {
     export class Menu {
+        bgm: createjs.AbstractSoundInstance;
+
         // Constructor
-        constructor() {
+        constructor() {            
             this.main();
         }
 
@@ -10,14 +12,14 @@
             playButton.update();
         }
 
-        public main() {
-
+        public main() { 
+            this.bgm = createjs.Sound.play("bgm", createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);           
             stateName = "menu";
             // Add Game Container
             game = new createjs.Container();            
 
             // Adds Title Bitmap to the Stage
-            titleScreen = new createjs.Bitmap(assets.loader.getResult("title"));            
+            titleScreen = new createjs.Bitmap(assets.loader.getResult("title"));
             game.addChild(titleScreen);     
             
             // Add Instruction Button            
@@ -35,17 +37,21 @@
             game.addChild(playButton);
         }
 
-        private playClickedEvent(event: MouseEvent) {
-            game.removeAllChildren();
+        private playClickedEvent(event: MouseEvent) {            
+            game.removeAllChildren();            
             stateName = "play";
-            play = new states.Play();   
+            play = new states.Play();            
         }
 
         private instructionClickedEvent(event: MouseEvent) {
             game.removeAllChildren();
-            stateName = "instruction";
+            stateName = "instruction";              
             instruction = new states.Instruction();
             stage.addChild(game);
         }
+        public stopBGM() {
+            this.bgm.stop();  
+        }
+
     }
 } 
