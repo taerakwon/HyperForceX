@@ -49,7 +49,8 @@
         }
 
         // Main Function
-        public main() {            
+        public main() {       
+            stateName = "play";     
             // Add Main Game Container
             game = new createjs.Container();
 

@@ -52,6 +52,8 @@ var mainButton: objects.Button;
 
 var helloLabel: createjs.Text; // create a reference
 var instructionLabel: createjs.Text;
+var totalDistanceLabel: createjs.Text;
+var gameOverLabel: createjs.Text;
 var jet: objects.Jetplane;
 var asteroids: objects.Asteroid[] = [];
 var fuel: objects.Fuel;

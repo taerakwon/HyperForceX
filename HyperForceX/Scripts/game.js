@@ -38,6 +38,8 @@ var againButton;
 var mainButton;
 var helloLabel; // create a reference
 var instructionLabel;
+var totalDistanceLabel;
+var gameOverLabel;
 var jet;
 var asteroids = [];
 var fuel;

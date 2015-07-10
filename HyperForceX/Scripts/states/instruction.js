@@ -29,6 +29,8 @@ var states;
             instructionLabel.x = canvas.clientWidth / 2;
             instructionLabel.y = 100;
             game.addChild(instructionLabel);
+            // Add Score
+            status;
         };
         Instruction.prototype.mainClickedEvent = function (event) {
             game.removeAllChildren();

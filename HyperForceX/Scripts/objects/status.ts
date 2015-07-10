@@ -8,7 +8,7 @@
         private fuelLabel: createjs.Text;
 
         // CONSTRUCTOR +++++++++++++++++++
-        constructor() {            
+        constructor() {
             this.distanceLabel = new createjs.Text("Distance:", "40px digital-7", "#FFFF00");
             this.fuelLabel = new createjs.Text("Fuel:", "40px digital-7", "#FFFF00");
             this.fuelLabel.x = 150;
@@ -17,7 +17,7 @@
             this.distanceLabel.y = 25;
             game.addChild(this.distanceLabel);
             game.addChild(this.fuelLabel);
-            
+
         }
 
         // PUBLIC METHODS +++++++++++++++++
@@ -25,5 +25,6 @@
             this.distanceLabel.text = "DISTANCE: " + this.distance;
             this.fuelLabel.text = "FUEL: " + this.fuelAmount;
         }
+
     }
-} 
+}

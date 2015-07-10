@@ -33,6 +33,9 @@
             instructionLabel.x = canvas.clientWidth / 2;
             instructionLabel.y = 100;
             game.addChild(instructionLabel);
+
+            // Add Score
+            status
         }
 
         private mainClickedEvent(event: MouseEvent) {

@@ -44,6 +44,7 @@ var states;
         };
         // Main Function
         Play.prototype.main = function () {
+            stateName = "play";
             // Add Main Game Container
             game = new createjs.Container();
             // Adds Galaxy Bitmap to the Stage
