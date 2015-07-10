@@ -23,14 +23,15 @@ var states;
             mainButton.addEventListener("click", this.mainClickedEvent);
             game.addChild(mainButton);
             // Add Instruction Label
-            instructionLabel = new createjs.Text("Use your mouse to maenuver the HyperForce X Jetplane\n\n" +
-                "Dodge astroids and collect fuels to travel further\n\n\n\n\nGOOD LUCK!", "26px digital-7", "#FFFF00");
+            var instText = "Use your mouse to maenuver the HyperForce X Jet\n\n" +
+                "Dodge astroids and collect fuels to travel further\n\n\n" +
+                "WARNING\n\nHitting an astroid will leak lots fuel\n\n" +
+                "Game ends when you no longer have fuel to fly your jet\n\n\nGOOD LUCK!";
+            instructionLabel = new createjs.Text(instText, "26px digital-7", "#FFFF00");
             instructionLabel.textAlign = "center";
             instructionLabel.x = canvas.clientWidth / 2;
             instructionLabel.y = 100;
             game.addChild(instructionLabel);
-            // Add Score
-            status;
         };
         Instruction.prototype.mainClickedEvent = function (event) {
             game.removeAllChildren();
