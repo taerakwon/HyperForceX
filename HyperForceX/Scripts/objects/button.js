@@ -6,6 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
+    // Exports Class Button of Sprite
     var Button = (function (_super) {
         __extends(Button, _super);
         // Constructor
@@ -16,9 +17,12 @@ var objects;
             this.on("mouseover", this.onOver);
             this.on("mouseout", this.onOut);
         };
+        // MOUSE EVENTS
+        // When mouse if over a button, the button's opacity is in half
         Button.prototype.onOver = function (event) {
             this.alpha = 0.5;
         };
+        // When mouse is no longer hovering over a button, the button's opacity returns to original (1)
         Button.prototype.onOut = function (event) {
             this.alpha = 1;
         };

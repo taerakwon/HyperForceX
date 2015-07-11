@@ -1,4 +1,6 @@
-﻿module states {
+﻿// STATE FOR INSTRUCTION
+
+module states {
     export class Instruction {
         // Constructor
         constructor() {
@@ -28,7 +30,7 @@
             
             // Add Instruction Label
             var instText = "Use your mouse to maenuver the HyperForce X Jet\n\n" +
-                "Dodge astroids and collect fuels to travel further\n\n\n" +
+                "Dodge asteroids and collect fuels to travel further\n\n\n" +
                 "WARNING\n\nHitting an astroid will leak lots fuel\n\n" +
                 "Game ends when you no longer have fuel to fly your jet\n\n\nGOOD LUCK!";
             instructionLabel = new createjs.Text(instText, "26px digital-7", "#FFFF00");
@@ -39,6 +41,8 @@
 
         }
 
+        // PUBLIC METHOD
+        // When Main Menu Button is Clicked
         private mainClickedEvent(event: MouseEvent) {
             game.removeAllChildren();
             stateName = "menu";

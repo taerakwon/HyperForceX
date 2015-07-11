@@ -6,6 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
+    // Exporting Class Fuel of GameObject
     var Fuel = (function (_super) {
         __extends(Fuel, _super);
         function Fuel(assetName) {

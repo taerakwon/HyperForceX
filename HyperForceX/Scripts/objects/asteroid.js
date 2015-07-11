@@ -6,6 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
+    // Exporting Class Asteroid of the GameObject
     var Asteroid = (function (_super) {
         __extends(Asteroid, _super);
         function Asteroid(assetName) {
@@ -20,6 +21,7 @@ var objects;
                 this.reset();
             }
         };
+        // Triggers when Asteroid has left the canvas of the game
         Asteroid.prototype.reset = function () {
             this.x = 720; // start island off stage 
             this.y = Math.floor(Math.random() * 480); // Starts Asteroid at Random Vertical Edge

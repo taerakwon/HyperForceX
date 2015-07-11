@@ -1,4 +1,5 @@
 ﻿module objects {
+    // Exporting Class Fuel of GameObject
     export class Fuel extends objects.GameObject {
 
         constructor(assetName: string) {

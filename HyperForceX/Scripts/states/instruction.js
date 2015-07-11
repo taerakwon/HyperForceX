@@ -1,3 +1,4 @@
+// STATE FOR INSTRUCTION
 var states;
 (function (states) {
     var Instruction = (function () {
@@ -24,7 +25,7 @@ var states;
             game.addChild(mainButton);
             // Add Instruction Label
             var instText = "Use your mouse to maenuver the HyperForce X Jet\n\n" +
-                "Dodge astroids and collect fuels to travel further\n\n\n" +
+                "Dodge asteroids and collect fuels to travel further\n\n\n" +
                 "WARNING\n\nHitting an astroid will leak lots fuel\n\n" +
                 "Game ends when you no longer have fuel to fly your jet\n\n\nGOOD LUCK!";
             instructionLabel = new createjs.Text(instText, "26px digital-7", "#FFFF00");
@@ -33,6 +34,8 @@ var states;
             instructionLabel.y = 100;
             game.addChild(instructionLabel);
         };
+        // PUBLIC METHOD
+        // When Main Menu Button is Clicked
         Instruction.prototype.mainClickedEvent = function (event) {
             game.removeAllChildren();
             stateName = "menu";

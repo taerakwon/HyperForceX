@@ -64,7 +64,6 @@
     <Content Include="assets\audio\fuelPack.wav" />
     <Content Include="assets\audio\imhit.wav" />
     <Content Include="assets\images\atlas.png" />
-    <Content Include="assets\images\bullet.png" />
     <Content Include="assets\images\galaxy.png" />
     <Content Include="assets\images\black.png" />
     <Content Include="assets\images\stars.png" />

@@ -1,4 +1,6 @@
-﻿module states {
+﻿// PLAY STATE (MAIN LEVEL)
+
+module states {
     export class Play {
 
         // Constructor

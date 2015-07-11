@@ -17,10 +17,10 @@
             this.x = stage.mouseX;
             this.y = stage.mouseY;            
         }
-
+        // To Stop the Engine Sound and Let Mouse Curvor Visible
         public destroy() {
             this.engineSound.stop();
-            stage.cursor = "auto";
+            stage.cursor = "auto"; // To remove mouse cursor when game is in play
         }
     }
 }  

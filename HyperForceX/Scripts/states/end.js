@@ -1,3 +1,4 @@
+// STATE FOR ENDING
 var states;
 (function (states) {
     var End = (function () {

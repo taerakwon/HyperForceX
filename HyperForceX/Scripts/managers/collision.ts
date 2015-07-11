@@ -15,14 +15,13 @@
 
             p2.x = gameObject.x;
             p2.y = gameObject.y;
-
-
+            
             if (utility.distance(p1, p2) < ((jet.height * 0.5) + (gameObject.height * 0.5))) {
                 if (gameObject.isColliding == false) {
                     createjs.Sound.play(gameObject.sound);
                     if (gameObject.name == "fuel") {
                         createjs.Sound.play("fuelPack");
-                        jetStatus.fuelAmount += 25;
+                        jetStatus.fuelAmount += 25; // Adds 25 fuel when it is collected
                         if (jetStatus.fuelAmount > 100) {
                             jetStatus.fuelAmount = 100;
                         }
@@ -30,8 +29,8 @@
                         gameObject.x = 0;                        
                     }
                     if (gameObject.name == "asteroid") {
-                        createjs.Sound.play("imhit");
-                        jetStatus.fuelAmount -= 25;
+                        createjs.Sound.play("imhit"); 
+                        jetStatus.fuelAmount -= 25; // Removes 25 fuel when the Jet collides with an astroid
                         gameObject.y = -150;
                     }
                 }

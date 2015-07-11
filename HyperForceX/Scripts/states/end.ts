@@ -1,4 +1,5 @@
-﻿module states {
+﻿// STATE FOR ENDING
+module states {
     export class End {
 
         // Constructor

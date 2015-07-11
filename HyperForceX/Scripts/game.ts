@@ -49,7 +49,6 @@ var instructionButton: objects.Button;
 var playButton: objects.Button;
 var againButton: objects.Button;
 var mainButton: objects.Button;
-
 var helloLabel: createjs.Text; // create a reference
 var instructionLabel: createjs.Text;
 var totalDistanceLabel: createjs.Text;
@@ -59,7 +58,7 @@ var asteroids: objects.Asteroid[] = [];
 var fuel: objects.Fuel;
 var jetStatus: objects.Status;
 var count = 0; // Counter used to measure fuel consumption
-var buttonName = "";
+
 
 // Game Manager
 
@@ -142,21 +141,5 @@ function main()
     menu = new states.Menu();
 
     stage.addChild(game);    
-    // Instatiate End State
-    //end = new states.End();
 
-    
-
-    // Instantiate Play State
-    //play = new states.Play();
-
-    // Add Game Container to Stage
-    //stage.addChild(game);
-    
-    //helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
-    //helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
-   // helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
-    //helloLabel.x = 160;
-   // helloLabel.y = 190;
-   // stage.addChild(helloLabel);
 }

@@ -1,4 +1,6 @@
-﻿module states {
+﻿// MAIN MENU STATE
+
+module states {
     export class Menu {
         bgm: createjs.AbstractSoundInstance;
 
@@ -37,18 +39,21 @@
             game.addChild(playButton);
         }
 
+        // PUBLIC METHODS
+        // When Play Button is Clicked
         private playClickedEvent(event: MouseEvent) {            
             game.removeAllChildren();            
             stateName = "play";
             play = new states.Play();            
         }
-
+        // When Instruction Button is Clicked
         private instructionClickedEvent(event: MouseEvent) {
             game.removeAllChildren();
             stateName = "instruction";              
             instruction = new states.Instruction();
             stage.addChild(game);
         }
+        // Stops the Background Music 
         public stopBGM() {
             this.bgm.stop();  
         }

@@ -1,4 +1,5 @@
 ﻿module objects {
+    // Exporting Class Asteroid of the GameObject
     export class Asteroid extends objects.GameObject {        
         constructor(assetName: string) {
             super(assetName);            
@@ -16,7 +17,7 @@
             }
         }
 
-
+        // Triggers when Asteroid has left the canvas of the game
         private reset(): void {
             this.x = 720; // start island off stage 
             this.y = Math.floor(Math.random() * 480); // Starts Asteroid at Random Vertical Edge

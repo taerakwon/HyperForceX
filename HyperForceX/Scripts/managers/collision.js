@@ -18,7 +18,7 @@ var managers;
                     createjs.Sound.play(gameObject.sound);
                     if (gameObject.name == "fuel") {
                         createjs.Sound.play("fuelPack");
-                        jetStatus.fuelAmount += 25;
+                        jetStatus.fuelAmount += 25; // Adds 25 fuel when it is collected
                         if (jetStatus.fuelAmount > 100) {
                             jetStatus.fuelAmount = 100;
                         }
@@ -27,7 +27,7 @@ var managers;
                     }
                     if (gameObject.name == "asteroid") {
                         createjs.Sound.play("imhit");
-                        jetStatus.fuelAmount -= 25;
+                        jetStatus.fuelAmount -= 25; // Removes 25 fuel when the Jet collides with an astroid
                         gameObject.y = -150;
                     }
                 }

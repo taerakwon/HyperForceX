@@ -1,3 +1,4 @@
+// MAIN MENU STATE
 var states;
 (function (states) {
     var Menu = (function () {
@@ -30,17 +31,21 @@ var states;
             playButton.addEventListener("click", this.playClickedEvent);
             game.addChild(playButton);
         };
+        // PUBLIC METHODS
+        // When Play Button is Clicked
         Menu.prototype.playClickedEvent = function (event) {
             game.removeAllChildren();
             stateName = "play";
             play = new states.Play();
         };
+        // When Instruction Button is Clicked
         Menu.prototype.instructionClickedEvent = function (event) {
             game.removeAllChildren();
             stateName = "instruction";
             instruction = new states.Instruction();
             stage.addChild(game);
         };
+        // Stops the Background Music 
         Menu.prototype.stopBGM = function () {
             this.bgm.stop();
         };
